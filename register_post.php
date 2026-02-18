@@ -2,20 +2,41 @@
 <html>
 <head>
     <title>Registration</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form method="POST" action="result_post.php">
-        Full Name:<br>
-        <input type="text" name="u_fullname"><br>
+
+<div class="container">
+    
+    <div class="card">
         
-        Email:<br>
-        <input type="email" name="u_email"><br>
+        <div class="header">
+            <h1>Registration</h1>
+        </div>
         
-        Password:<br>
-        <input type="password" name="u_password"><br>
-        
-        <input type="submit" name="submitNow" value="Register Now"> 
-    </form>
+        <form method="POST" action="register_post.php">
+            
+            <div class="row">
+                <label>Full Name:</label>
+                <input type="text" name="u_fullname">
+            </div>
+            
+            <div class="row">
+                <label>Email:</label>
+                <input type="email" name="u_email">
+            </div>
+            
+            <div class="row">
+                <label>Password:</label>
+                <input type="password" name="u_password">
+            </div>
+            
+            <div class="actions">
+                <button type="submit" name="submitNow">Register Now</button>
+            </div>
+        </form>
+    </div>
+</div>
+
 </body>
 </html>
