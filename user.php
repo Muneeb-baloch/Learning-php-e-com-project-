@@ -18,17 +18,12 @@ $result = mysqli_query($conn, $qry);
         <th>  Update     </th>
     </tr>
 
-    
-
-   
 <?php
     while($row = mysqli_fetch_assoc($result)){ 
         
         $userId = $row["user_id"];
         $userFullName = $row["user_full_name"];
         $userEmail = $row["user_email"];
-
-        
         
         ?>
 
@@ -38,6 +33,8 @@ $result = mysqli_query($conn, $qry);
         <th><?php echo $userEmail  ?> </th>
         <td> 
         <a href="update.php?user_id=<?php echo $userId ?>"> Edit </a>
+        
+        
     </td>
       
     </tr>

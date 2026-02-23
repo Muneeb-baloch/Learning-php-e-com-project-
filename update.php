@@ -23,23 +23,46 @@ $useremail = $user["user_email"];
 $userpassword = $user["user_password"];
 
 
+if(isset($_POST["updateBTN"])){
+    $username = $_POST["u_fullname"];
+    $useremail = $_POST["u_email"];
+    $userpassword = $_POST["u_password"];
+
+    $updateQry = "UPDATE tbl_user_registration 
+    SET user_full_name='$username', 
+    user_email='$useremail',
+     user_password='$userpassword'
+    WHERE user_id=$userid;";
+
+
+$upddaResult = mysqli_query($conn, $updateQry);
+
+if($upddaResult){
+    echo "User Updated Successfully";
+    header("Location: user.php");
+    exit();
+
+
+}
+
+else {
+    echo "Error Updating User: " . mysqli_error($conn);
+}
 
 
 
 
-
-
+    if(mysqli_query($conn, $updateQry)){
+        echo "User Updated Successfully";
+        
+    }else{
+        echo "Error Updating User: " . mysqli_error($conn);
+    }
+}
 
 
 
 ?>
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html>
