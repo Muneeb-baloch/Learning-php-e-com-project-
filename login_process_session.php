@@ -1,7 +1,6 @@
 <?php
-
+session_start();
 include("db.php"); 
-
 
 if(isset($_POST["submitNow"])){
     $useremail = $_POST["u_email"];
@@ -11,15 +10,24 @@ if(isset($_POST["submitNow"])){
 
     $result = mysqli_query($conn, $qry);
 
-    if(mysqli_num_rows($result) > 0)
+    if(mysqli_num_rows($result) > 0) {
         
-        {
-        echo "Login Successful";
-    } else {
+        
+      $user = mysqli_fetch_assoc($result);
+      $_SESSION["user_id"] = $user["user_id"];
+      $_SESSION["user_email"] = $user["user_email"];
+
+      header("Location: dashboard.php");
+      exit();
+
+      
+    }else {
         
         echo "Invalid Email or Password";
+        
+
+    } 
     }
-}
 
 ?>
 
