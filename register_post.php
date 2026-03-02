@@ -12,7 +12,7 @@
         
         <div class="header">
             <h1>Registration</h1>
-        </div>
+        </div>  
         
         <form method="POST" action="register_post.php">
             
